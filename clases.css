@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 html {
     scroll-behavior: smooth;
@@ -7,15 +7,12 @@ html {
 
 /* Establecer una fuente por defecto con Google Fonts */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "JetBrains Mono", monospace;
     margin: 0;
     padding: 0;
-    /* background-image: url(https://silicon.createx.studio/assets/img/landing/intro/hero/bg.jpg); */
-   background-image: url(https://thelokin.dev/images/grainy.png);
-    background-color: #dacfb2;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    background-image: url(https://thelokin.dev/images/grainy.png);
+    background-color: #1d1c22;
+    color: azure;
 }
 
 header {
@@ -28,6 +25,14 @@ header {
     position: sticky;
     top: -1px;
     z-index: 10;
+    margin-bottom: 5%;
+}
+
+.logo{
+    text-decoration: none;
+    font-size: 25px;
+    color: #00fe9b;
+    font-weight: 600;
 }
 
 .menu {
@@ -47,7 +52,7 @@ header {
 }
 
 nav ul li a {
-    color: rgb(0, 0, 0);
+    color: azure;
     text-decoration: none;
     font-weight: bold;
     padding: 0.5rem;
@@ -56,14 +61,147 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    color: #00fe9b;
 }
 
 main{
-    display: flex;
-    flex-direction: column;
     padding: 20px;
-    color: rgb(0, 0, 0);
+    color: azure
 }
 
+.inicio{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+}
 
+.perfil{
+    position: relative;
+    width: 350px;   /* Tamaño de la imagen */
+    height: 350px;
+}
+
+.perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 500%;
+    display: block;
+    z-index: 1;
+    position: relative;
+}
+
+/* Aro segmentado */
+.perfil::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    border-radius: 50%;
+    background: conic-gradient(
+         #00fe9b 0deg 12deg,
+        transparent 12deg 35deg,
+        #00fe9b 35deg 50deg,
+        transparent 50deg 70deg,
+        #00fe9b 70deg 90deg,
+        transparent 90deg 120deg,
+        #00fe9b 120deg 125deg,
+        transparent 125deg 160deg,
+        #00fe9b 160deg 180deg,
+        transparent 180deg 210deg,
+        #00fe9b 210deg 240deg,
+        transparent 240deg 260deg,
+        #00fe9b 260deg 265deg,
+        transparent 265deg 300deg,
+        #00fe9b 300deg 330deg,
+        transparent 330deg 360deg
+    );
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 6px), black calc(100% - 4px));
+    mask: radial-gradient(farthest-side, transparent calc(100% - 6px), black calc(100% - 4px));
+}
+
+.inicio-content{
+    max-width: 600px;
+}
+
+.inicio-content h1{
+    font-size: 50px;
+    font-weight: 500;
+    margin: 0px;
+}
+
+.inicio-content h3{
+    font-size: 32px;
+    font-weight: 700;
+    color: #00fe9b;
+    margin: 0px; 
+}
+
+.inicio-content p{
+    font-size: 16px;
+    margin: 20px 0 40px;
+}
+
+.botones-home{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 345px;
+    height: 50px;
+}
+
+.botones-home a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100%;
+    background: #00fe9b;
+    border: 2px solid #00fe9b;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #081b29;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.botones-home a:hover{
+    color: #00fe9b;
+}
+
+.botones-home a:nth-child(2){
+    background: transparent;
+    color: #00fe9b;
+}
+
+.botones-home a:nth-child(2):hover{
+    color: #081b29;
+}
+
+.botones-home a:nth-child(2)::before{
+    background: #00fe9b;
+}
+
+.botones-home a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #1d1c22;
+    z-index: -1;
+    transition: .5s;
+}
+
+.botones-home a:hover:before{
+    width: 100%;
+}

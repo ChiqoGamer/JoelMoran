@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* Establecer una fuente por defecto con Google Fonts */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-image: url(https://silicon.createx.studio/assets/img/landing/intro/hero/bg.jpg); */
+   background-image: url(https://thelokin.dev/images/grainy.png);
+    background-color: #dacfb2;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: -1px;
+    z-index: 10;
+}
+
+.menu {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para la barra de navegación */
+.menu ul {
+    display: flex;
+    list-style: none;
+    justify-content: end;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+}
+
+

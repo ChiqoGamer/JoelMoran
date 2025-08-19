@@ -120,10 +120,10 @@ nav ul li a:hover {
     transform: translateY(5px)
 }
 
-main{
+/* main{
     padding: 20px;
     color: azure
-}
+} */
 
 .inicio{
     display: flex;
@@ -375,6 +375,17 @@ main{
     margin-bottom: 4rem;
 }
 
+.titulo-contacto{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.titulo-contacto svg{
+    width: 3rem;
+    height: 2rem;
+}
+
 .conteiner-contacto{
     display: flex;
     justify-content: space-between;
@@ -475,6 +486,17 @@ label{
     height: 500px;
 }
 
+.titulo-experiencia{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.titulo-experiencia svg{
+    width: 3rem;
+    height: 2rem;
+}
+
 #skills{
     display: flex;
     flex-direction: column;
@@ -483,13 +505,108 @@ label{
     height: 500px;
 }
 
+.titulo-skills{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.titulo-skills svg{
+    width: 3rem;
+    height: 2rem;
+}
+
+/* ---------------------------------------------- */
+
 #proyectos{
     display: flex;
     flex-direction: column;
     padding: 0 10%;
     margin-bottom: 4rem;
-    height: 500px;
+    height: auto;
 }
+
+.titulo-proyectos{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.titulo-proyectos svg{
+    width: 3rem;
+    height: 2rem;
+}
+/* ------------ */
+
+.cont-proyecto{
+    display: flex;
+    justify-content: space-between;
+    /* margin: 2rem 0 2rem 0; */
+}
+
+.proyecto-info{
+    width: 45%;
+}
+
+.proyecto-img{
+    width: 50%;
+}
+
+.proyecto-img img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  border: 2px solid #1d1c22;
+  transition: .5s;
+}
+
+.proyecto-img img:hover {
+    transform: scale(1.1);
+}
+
+.proyecto-info h3 {
+  font-size: 1.5rem;
+  margin: 0 0 5px 0;
+}
+
+.subtitulo {
+  font-size: 1rem;
+  color: gray;
+  margin: 0 0 10px 0;
+}
+
+.tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.tecnologias span {
+  background: #373541;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.tecnologias span svg{
+  width: 1rem;
+  height: 1rem;
+  fill: white;
+}
+
+.descripcion {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------------------------------------------- */
 
 #educacion{
     display: flex;
@@ -497,4 +614,95 @@ label{
     padding: 0 10%;
     margin-bottom: 4rem;
     height: 500px;
+}
+
+.titulo-educacion{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.titulo-educacion svg{
+    width: 3rem;
+    height: 2rem;
+}
+
+/* #educacion {
+  position: relative;
+  padding-left: 40px;
+  margin: 2rem 0;
+  border-left: 2px solid white; la línea vertical
+} */
+
+#educacion h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timeline-item {
+  margin: 0 0 4rem 1.6rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.timeline-dot {
+  margin-top: 8px;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+}
+
+.linea-tiempo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.linea{
+    position: absolute;
+    height: 150px;
+    margin-top: 15px;
+    border-left: 1px solid white;
+}
+
+.linea-EXP{
+    position: absolute;
+    height: 165px;
+    margin-top: 15px;
+    border-left: 1px solid white;
+}
+
+.linea3 {
+    position: absolute;
+    height: 60px;
+    border-left: 1px solid white;
+}
+
+.linea3-EXP {
+    position: absolute;
+    height: 70px;
+    border-left: 1px solid white;
+}
+
+.timeline-content h3 {
+  font-weight: bold;
+  margin: 0 0 3px 0;
+  font-size: 21px;
+}
+
+.timeline-content .institution {
+  margin: 0;
+  font-size: 18px;
+  color: #888;
+}
+
+.timeline-content .date {
+  font-size: 13px;
+  color: #555;
+  margin: 0;
 }

@@ -502,7 +502,7 @@ label{
     flex-direction: column;
     padding: 0 10%;
     margin-bottom: 4rem;
-    height: 500px;
+    height: auto;
 }
 
 .titulo-skills{
@@ -717,4 +717,59 @@ footer div{
 footer p{
     margin: 2rem;
 }
+
+.contenedor-tecno {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    /* background: #555; */
+}
+
+.caja-tecno{
+    border: 1px solid rgba(255, 255, 255, 0.282);
+    width: 100%;
+    min-height: 241px;
+    height: auto;
+    box-sizing: border-box;
+    padding: 1rem;
+    border-radius: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caja-tecno h3{
+    color: #00fe9b;
+    margin: 0 0 1rem;
+}
+
+.cont-tecnologias{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
+    justify-content: space-around;
+    width: 100%;
+}
+
+.tecno-sola{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.tecno-sola img{
+    width: 3rem;
+    color: white;
+}
+
+.tecno-sola p{
+    font-size: .7rem;
+    font-weight: lighter;
+}
+
  

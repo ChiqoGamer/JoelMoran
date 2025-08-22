@@ -15,7 +15,7 @@ body {
     color: azure;
 }
 
-
+/* --------------------HEADER---------------------------- */
 header {
     box-sizing: border-box;
     width: 100%;
@@ -39,22 +39,11 @@ header {
     position: relative;
 }
 
-.logo::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #1d1c22;
-    animation: showRight 1s ease forwards;
-    animation-delay: .4s;
-}
-
 .menu {
     width: 100%;
     justify-content: center;
     align-items: center;
+
 }
 
 /* Estilo para la barra de navegación */
@@ -72,7 +61,6 @@ nav ul li a {
     color: azure;
     text-decoration: none;
     padding: 0.5rem;
-    border-radius: 10px;
     font-size: 20px;
 }
 
@@ -117,20 +105,23 @@ nav ul li a:hover {
 }
 
 .btn-contacto:hover{
-    transform: translateY(5px)
+    transform: scale(2)
 }
 
-/* main{
-    padding: 20px;
-    color: azure
-} */
+/* 🚀 Estilo especial SOLO para Contacto */
+.menu a[href="#contacto"].active {
+  color: black;         /* texto negro */
+}
 
+/* --------------------INICIO---------------------------- */
 .inicio{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10%;
+    padding: 0 5%;
     margin-bottom: 4rem;
+    padding-top: 80px;   /* agrega espacio extra */
+    margin-top: -80px;   /* lo neutraliza visualmente */
 }
 
 .perfil{
@@ -151,6 +142,8 @@ nav ul li a:hover {
 
 /* Aro segmentado */
 .perfil::before {
+    width: 350px;   /* Tamaño de la imagen */
+    height: 350px;
     content: '';
     position: absolute;
     top: -8px;
@@ -191,19 +184,6 @@ nav ul li a:hover {
     position: relative;
 }
 
-.inicio-content h1::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #1d1c22;
-    background-image: url(https://thelokin.dev/images/grainy.png);
-    animation: showRight 1s ease forwards;
-    animation-delay: .8s;
-}
-
 .inicio-content h3{
     font-size: 32px;
     font-weight: 700;
@@ -212,36 +192,10 @@ nav ul li a:hover {
     position: relative;
 }
 
-.inicio-content h3::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #1d1c22;
-    background-image: url(https://thelokin.dev/images/grainy.png);
-    animation: showRight 1s ease forwards;
-    animation-delay: .4s;
-}
-
 .inicio-content p{
     font-size: 16px;
     margin: 20px 0 40px;
     position: relative;
-}
-
-.inicio-content p::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #1d1c22;
-    background-image: url(https://thelokin.dev/images/grainy.png);
-    animation: showRight 1s ease forwards;
-    animation-delay: 1s;
 }
 
 .botones-home{
@@ -251,19 +205,6 @@ nav ul li a:hover {
     width: 400px;
     height: 50px;
     position: relative;
-}
-
-.botones-home::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #1d1c22;
-    background-image: url(https://thelokin.dev/images/grainy.png);
-    animation: showRight 1s ease forwards;
-    animation-delay: 1s;
 }
 
 .botones-home a:nth-child(1){
@@ -327,6 +268,71 @@ nav ul li a:hover {
     width: 100%;
 }
 
+/* --------------------ANIMACIONES DE ENTRADA---------------------------- */
+.logo::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #1d1c22;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+}
+
+.inicio-content h3::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #1d1c22;
+    background-image: url(https://thelokin.dev/images/grainy.png);
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+}
+
+.inicio-content h1::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #1d1c22;
+    background-image: url(https://thelokin.dev/images/grainy.png);
+    animation: showRight 1s ease forwards;
+    animation-delay: .8s;
+}
+
+.inicio-content p::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #1d1c22;
+    background-image: url(https://thelokin.dev/images/grainy.png);
+    animation: showRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.botones-home::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #1d1c22;
+    background-image: url(https://thelokin.dev/images/grainy.png);
+    animation: showRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
 /* Animación general para "aparecer desde abajo con fade" */
 @keyframes fadeInUp {
   0% {
@@ -368,122 +374,12 @@ nav ul li a:hover {
 .menu li:nth-child(6) { animation-delay: 1.2s; }
 .perfil { animation-delay: 1.8s; }
 
-#contacto{
-    display: flex;
-    flex-direction: column;
-    padding: 0 10%;
-    margin-bottom: 4rem;
-}
-
-.titulo-contacto{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.titulo-contacto svg{
-    width: 3rem;
-    height: 2rem;
-}
-
-.conteiner-contacto{
-    display: flex;
-    justify-content: space-between;
-    height: 400px;
-}
-
-.info-contacto,
-.mensaje-contacto{
-    width: 45%;
-    height: 100%;
-    border-radius: 1rem;
-    border: 1px solid #00fe9b;
-    padding: 1rem;
-}
-
-.mensaje-contacto form{
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-
-}
-
-.mensaje-contacto textarea,
-.mensaje-contacto input{
-    margin: 0.5rem 0 1rem 0;
-    background: #1d1c22;
-    border-radius: 8px;
-    border: 1px solid #00fe9b;
-    height: 2rem;
-    color: white;
-    padding: 8px;
-}
-
-.mensaje-contacto textarea{
-    height: 6rem;
-}
-
-label{
-    font-weight: lighter;
-}
-
-.mensaje-contacto button{
-    border-radius: 8px;
-    height: 4rem;
-    border: 0;
-    background:#373541;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.mensaje-contacto button:hover{
-    background: #5a576b;
-}
-
-.info-contacto{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.elem-infocontacto{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.info-svg{
-    background: #373541;
-    height: 4rem;
-    width: 4rem;
-    border-radius: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.info-svg svg{
-    height: 1.5rem;
-    width: 1.5rem;
-}
-
-.info-contacto p,h4{
-    margin: 8px;
-}
-
-.info-contacto p{
-    font-weight: lighter;
-}
-
+/* --------------------EXPERIENCIA---------------------------- */
 #experiencia{
     display: flex;
     flex-direction: column;
-    padding: 0 10%;
-    margin-bottom: 4rem;
-    height: 500px;
+    padding: 0 5%;
+    margin-bottom: 4rem;    
 }
 
 .titulo-experiencia{
@@ -497,32 +393,27 @@ label{
     height: 2rem;
 }
 
-#skills{
-    display: flex;
-    flex-direction: column;
-    padding: 0 10%;
-    margin-bottom: 4rem;
-    height: auto;
+.linea-EXP{
+    position: absolute;
+    height: 165px;
+    margin-top: 15px;
+    border-left: 1px solid white;
 }
 
-.titulo-skills{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.linea3-EXP {
+    position: absolute;
+    height: 70px;
+    border-left: 1px solid white;
 }
 
-.titulo-skills svg{
-    width: 3rem;
-    height: 2rem;
-}
 
-/* ---------------------------------------------- */
+/* --------------------PROYECTOS---------------------------- */
 
 #proyectos{
     display: flex;
     flex-direction: column;
-    padding: 0 10%;
-    margin-bottom: 4rem;
+    padding: 0 5%;
+    margin-bottom: 4rem;    
     height: auto;
 }
 
@@ -536,12 +427,10 @@ label{
     width: 3rem;
     height: 2rem;
 }
-/* ------------ */
 
 .cont-proyecto{
     display: flex;
     justify-content: space-between;
-    /* margin: 2rem 0 2rem 0; */
 }
 
 .proyecto-info{
@@ -606,14 +495,13 @@ label{
   margin: 0;
 }
 
-/* ---------------------------------------------- */
+/* --------------------EDUCACION---------------------------- */
 
 #educacion{
     display: flex;
     flex-direction: column;
-    padding: 0 10%;
-    margin-bottom: 4rem;
-    height: 500px;
+    padding: 0 5%;
+    margin-bottom: 4rem;    
 }
 
 .titulo-educacion{
@@ -636,36 +524,9 @@ label{
   gap: 8px;
 }
 
-.timeline-item {
-  margin: 0 0 4rem 1.6rem;
-  display: flex;
-  gap: 2rem;
-}
-
-.timeline-dot {
-  margin-top: 8px;
-  width: 14px;
-  height: 14px;
-  background: white;
-  border-radius: 50%;
-}
-
-.linea-tiempo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .linea{
     position: absolute;
     height: 150px;
-    margin-top: 15px;
-    border-left: 1px solid white;
-}
-
-.linea-EXP{
-    position: absolute;
-    height: 165px;
     margin-top: 15px;
     border-left: 1px solid white;
 }
@@ -676,10 +537,25 @@ label{
     border-left: 1px solid white;
 }
 
-.linea3-EXP {
-    position: absolute;
-    height: 70px;
-    border-left: 1px solid white;
+/* --------------------EDUCACION Y EXPERIENCIA---------------------------- */
+.timeline-item {
+  margin: 0 0 4rem 1.6rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.linea-tiempo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-dot {
+  margin-top: 8px;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
 }
 
 .timeline-content h3 {
@@ -700,22 +576,24 @@ label{
   margin: 0;
 }
 
-footer{
-    text-align: center;
-    margin-top: 10rem;
-    color: white;
+/* --------------------SKILLS---------------------------- */
+#skills{
     display: flex;
     flex-direction: column;
-    align-items: center;
-} 
-
-footer div{
-    border-top: 1px solid #373541;
-    width: 80%;
+    padding: 0 5%;
+    margin-bottom: 4rem;
+    height: auto;
 }
 
-footer p{
-    margin: 2rem;
+.titulo-skills{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.titulo-skills svg{
+    width: 3rem;
+    height: 2rem;
 }
 
 .contenedor-tecno {
@@ -726,7 +604,6 @@ footer p{
     gap: 1rem;
     justify-items: center;
     align-items: center;
-    /* background: #555; */
 }
 
 .caja-tecno{
@@ -737,10 +614,30 @@ footer p{
     box-sizing: border-box;
     padding: 1rem;
     border-radius: 2rem;
-
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    position: relative;
+    overflow: hidden;
+    z-index: 0; /* crea un contexto de apilamiento */
+
+}
+
+/* El "spotlight" */
+.caja-tecno::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    20rem circle at var(--x, 100%) var(--y, 0%),
+    rgb(0, 255, 128),
+    transparent 40%
+  );
+  opacity: .3;
+  transition: background 0.1s;
+  pointer-events: none; /* No bloquea clics */
+  z-index: -1; /* 👈 lo mandamos detrás */
 }
 
 .caja-tecno h3{
@@ -760,10 +657,13 @@ footer p{
     flex-direction: column;
     align-items: center;
     color: white;
+    transition: .5s;
 }
 
 .tecno-sola img{
     width: 3rem;
+    height: 3rem;
+    object-fit: contain;
     color: white;
 }
 
@@ -772,4 +672,166 @@ footer p{
     font-weight: lighter;
 }
 
+.tecno-sola:hover{
+    transform: scale(1.2);
+}
+
+/* --------------------CONTACTO---------------------------- */
+#contacto{
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+    margin-bottom: 4rem;
+    height: auto;
+    /* height: 100vh; */
+}
+
+.titulo-contacto{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.titulo-contacto svg{
+    width: 3rem;
+    height: 2rem;
+}
+
+.conteiner-contacto{
+    display: flex;
+    justify-content: space-between;
+    height: 400px;
+    /* max-height: auto; */
+    flex-wrap: wrap;
+    gap: 0rem;
+}
+
+.info-contacto,
+.mensaje-contacto{
+    /* width: 48%; */
+    border-radius: 1rem;
+    border: 1px solid #00fe9b;
+    padding: 2rem;
+    box-sizing: border-box;
+
+    flex: 1;                 /* que crezcan de forma flexible */
+    min-width: 400px;        /* bajamos un poco el límite mínimo */
+    max-width: 48%;          /* nunca más grandes que la mitad */
+    height: auto;  
+}
+
+.mensaje-contacto h3{
+    margin: 0 0 1rem;
+}
+
+.info-contacto h3{
+    margin: 0 0 1rem;
+}
+
+.info-contacto p{
+    font-size: 14px;
+}
+
+.mensaje-contacto form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+.mensaje-contacto textarea,
+.mensaje-contacto input{
+    margin: 0.5rem 0 1rem 0;
+    background: #1d1c22;
+    border-radius: 8px;
+    border: 1px solid #00fe9b;
+    height: 1.5rem;
+    color: white;
+    padding: 8px;
+}
+
+.mensaje-contacto textarea{
+    height: 3.5rem;
+}
+
+label{
+    font-weight: lighter;
+}
+
+.mensaje-contacto button{
+    border-radius: 1rem;
+    height: 3rem;
+    border: 0;
+    background:#373541;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.mensaje-contacto button:hover{
+    background: #5a576b;
+}
+
+.info-contacto{
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+    justify-content: space-between;
+}
+
+.elem-infocontacto{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.info-svg{
+    background: #373541;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-svg svg{
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.info-contacto p,h4{
+    margin: 8px;
+}
+
+.info-contacto p{
+    font-weight: lighter;
+}
+
+/* --------------------FOOTER---------------------------- */
+footer{
+    text-align: center;
+    margin-top: 10rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+footer div{
+    border-top: 1px solid #373541;
+    width: 80%;
+}
+
+footer p{
+    margin: 2rem;
+}
+
+
+@media (max-width: 1024px) {
+
+}
  

@@ -22,8 +22,20 @@
 
 <body>
     <header>
-        <a href="#" class="logo" style="color: white;">Joel</a>
-        <a href="#" class="logo">.dev </a>
+        <div class="logo">
+            <a href="#" style="color: white;">Joel</a>
+            <a href="#">.dev </a>
+        </div>
+
+        <!-- Checkbox oculto para controlar el menú -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+        <!-- Icono de hamburguesa a la derecha -->
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
 
         <nav class="menu">
             <ul>
@@ -550,7 +562,7 @@
     </main>
     <footer>
         <div></div>
-        <p>© 2025 Joel Nicolas Moran. Todos los derechos reservados.</p>
+        <p>© 2025 Joel Nicolás Morán. Todos los derechos reservados.</p>
     </footer>
 
 <script src="script.js"></script>

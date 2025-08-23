@@ -831,7 +831,136 @@ footer p{
 }
 
 
-@media (max-width: 1024px) {
 
-}
+/* --------------------ADAPTABILIDAD EN CELULARES---------------------------- */
+@media (max-width: 768px) {
+    header{
+        justify-content: flex-start;
+        padding: 1rem;
+    }
+
+    .logo{
+        font-size: 1.2rem;
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .inicio {
+        flex-direction: column-reverse; /* invierte el orden */
+        justify-content: center;
+        align-items: center;
+        /* text-align: center; centra el texto también */
+        gap: 2rem; /* espacio entre perfil y contenido */
+    }
+
+    .perfil {
+        margin: 0 auto; /* asegura que la imagen quede centrada */
+        width: 250px;   /* tamaño más chico para móvil */
+        height: 250px;
+    }
+
+    .inicio-content {
+        max-width: 90%;
+        align-items: start;
+        justify-content: end;
+    }
+
+    .inicio-content h1 {
+        font-size: 30px; 
+    } 
+
+    .inicio-content h3 {
+        font-size: 20px;
+    }
+
+    .botones-home {
+        width: 100%;
+    }
+
+    .botones-home a:nth-child(1) { 
+        font-size: .8rem;   
+        /* padding: .5rem; */
+    
+    }
+
+    .linea-EXP{
+    height: 280px;     
+    }
+
+    .linea3-EXP{
+    height: 150px;       
+    }
+
+    .timeline-content h3{
+        margin-bottom: 1rem;
+    }
+
+    .cont-proyecto{
+        flex-direction: column;
+        margin-bottom: 3rem;
+    }
+
+    .proyecto-info{
+        width: 100%;
+    }
+
+    .descripcion{
+        margin-bottom: 1rem;
+    }
+
+    .proyecto-img{
+        width: 100%;
+    }
+
+    .linea{
+    height: 260px;    
+    }
+
+    .linea3{
+    height: 150px;        
+    }
+
+    .titulo-skills{
+        margin-bottom: 2rem;
+    }
+
+    .contenedor-tecno{
+        display: flex;
+        gap: 2rem; 
+    } 
+
+    .titulo-contacto{
+        margin-bottom: 2rem;
+    }
+
+    .conteiner-contacto{
+        height: 100%;
+        gap: 2rem; 
+    }
+
+    .info-contacto,
+    .mensaje-contacto{
+        min-width: 100%;
+        /* width: 100%;  */
+        height: 450px;
+        padding: 1rem; 
+    }
+
+    .info-svg svg{
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .info-svg{
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .elem-infocontacto p{
+        font-size: .83rem; 
+    }
+} 
+
  

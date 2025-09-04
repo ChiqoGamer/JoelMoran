@@ -19,6 +19,11 @@
     <meta property="og:url" content="https://chiqogamer.github.io/JoelMoran">
     <meta property="og:type" content="website">
     <meta name="format-detection" content="telephone=no">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('n5R3fiRRMyiPp10nv')
+    </script>
 
 </head>
 
@@ -70,7 +75,8 @@
                     innovadoras en proyectos desafiantes.
                 </p>
                 <div class="botones-home">        
-                    <a href="cvJoel.pdf" target="_blank">Visualizar CV
+                    <!-- <a href="cvJoel.pdf" target="_blank">Visualizar CV -->
+                        <a href="#" id="openCvBtn">Visualizar CV
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-download" viewBox="0 0 16 16">
                             <path
@@ -94,6 +100,56 @@
                         </svg>
                     </a>
                 </div>
+
+<!-- MODAL -->
+<div id="cvModal" class="modal">
+  <div class="modal-content">
+    <!-- Barra de herramientas -->
+    <div class="toolbar">
+      <div class="toolbar-left">
+        <button id="zoomOut">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8"/>
+</svg> 
+        </button>
+        <button id="zoomIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+</svg>
+        </button>
+        <!-- <span id="pageInfo">Página 1</span>
+        <button id="prevPage">⬅</button>
+        <button id="nextPage">➡</button> -->
+      </div>
+      <div class="toolbar-right">
+        <!-- <button id="printBtn">🖨️</button> -->
+        <a href="cvJoel.pdf" download>
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-download" viewBox="0 0 16 16">
+                            <path
+                                d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                            <path
+                                d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+                        </svg>
+          </button>
+        </a>
+        <button id="closeBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+</svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Contenedor del PDF -->
+    <div class="pdf-viewer">
+      <canvas id="pdfCanvas"></canvas>
+    </div>
+  </div>
+</div>
+
+
             </div>
             <div class="perfil">
                 <img src="foto.png" alt="">
@@ -588,7 +644,7 @@
 
                 <div class="mensaje-contacto">
                     <h3>Envíame un mensaje</h3>
-                    <form action="link_forms_pre" method="POST">
+                    <form id="form">
                         <label for="nombre">Nombre</label>
                         <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
 
@@ -598,17 +654,21 @@
                         <label for="mensaje">Mensaje</label>
                         <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí" required></textarea>
 
-                        <button type="submit">Enviar</button>
+                        <button type="submit" id="button" >Enviar</button>
                     </form>
+                    <div id="alerta" class="alerta-oculta"></div>
                 </div>
             </div>
         </section>
     </main>
     <footer>
-        <div></div>
-        <p>© 2025 Joel Nicolás Morán. Todos los derechos reservados.</p>
+        <div class="line-footer"></div>
+        <div class="footer-container">
+            <p>© 2025 Joel Nicolás Morán. Todos los derechos reservados.</p>
+            <p>Diseñado y desarrollado con 💚 y mucho ☕!</p> 
+        </div>
     </footer>
-
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="script.js"></script>
 </body>
 

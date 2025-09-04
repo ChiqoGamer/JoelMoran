@@ -23,20 +23,29 @@ const navLinks = document.querySelectorAll(".menu a");
 
 const observer = new IntersectionObserver(
   (entries) => {
+    let topSection = null;
+    let minDistance = window.innerHeight;
+
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Remueve la clase active de todos
-        navLinks.forEach((link) => link.classList.remove("active"));
-
-        // Activa el link correspondiente
-        const id = entry.target.getAttribute("id");
-        const activeLink = document.querySelector(`.menu a[href="#${id}"]`);
-        if (activeLink) activeLink.classList.add("active");
+        const rect = entry.target.getBoundingClientRect();
+        const distance = Math.abs(rect.top);
+        if (distance < minDistance) {
+          minDistance = distance;
+          topSection = entry.target;
+        }
       }
     });
+
+    if (topSection) {
+      navLinks.forEach((link) => link.classList.remove("active"));
+      const id = topSection.getAttribute("id");
+      const activeLink = document.querySelector(`.menu a[href="#${id}"]`);
+      if (activeLink) activeLink.classList.add("active");
+    }
   },
-  { threshold: 0. } // el 60% de la sección debe estar visible para marcarla
-); 
+  { threshold: [0.4] }
+);
 
 sections.forEach((section) => observer.observe(section));
 
@@ -95,3 +104,83 @@ function mostrarAlerta(mensaje, esError = false, esCargando = false) {
       }, 3000);
     }
   }
+
+
+  // Modal para CV
+const modal = document.getElementById("cvModal");
+const openBtn = document.getElementById("openCvBtn");
+const closeBtn = document.getElementById("closeBtn");
+const canvas = document.getElementById("pdfCanvas");
+const toolbar = document.querySelector(".toolbar");
+const ctx = canvas.getContext("2d");
+
+let pdfDoc = null;
+let pageNum = 1;
+let scale = 1.4; 
+
+// Abrir modal
+openBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  modal.style.display = "flex";
+  if (!pdfDoc) {
+    loadPdf("cvJoel.pdf"); // Ruta de tu PDF
+  }
+});
+
+// Cargar PDF
+function loadPdf(url) {
+  pdfjsLib.getDocument(url).promise.then((pdf) => {
+    pdfDoc = pdf;
+    renderPage(pageNum);
+  });
+}
+
+function renderPage(num) {
+  pdfDoc.getPage(num).then((page) => {
+    const viewport = page.getViewport({ scale });
+
+    // Crear canvas temporal
+    const tempCanvas = document.createElement("canvas");
+    const tempCtx = tempCanvas.getContext("2d");
+    tempCanvas.height = viewport.height;
+    tempCanvas.width = viewport.width;
+
+    const renderContext = {
+      canvasContext: tempCtx,
+      viewport: viewport
+    };
+
+    page.render(renderContext).promise.then(() => {
+      // Copiar imagen renderizada al canvas visible
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+      ctx.drawImage(tempCanvas, 0, 0);
+    });
+  });
+}
+ 
+
+// Controles
+document.getElementById("zoomIn").addEventListener("click", () => {
+  scale += 0.2;
+  renderPage(pageNum);
+});
+document.getElementById("zoomOut").addEventListener("click", () => {
+  scale = Math.max(0.5, scale - 0.2);
+  renderPage(pageNum);
+});
+
+
+// Cerrar con botón X
+closeBtn.addEventListener("click", () => modal.style.display = "none");
+
+// Cerrar al hacer click afuera del canvas
+modal.addEventListener("click", (e) => {
+  if (e.target !== canvas && !toolbar.contains(e.target)) {
+    modal.style.display = "none";
+  }
+});
+
+
+
+

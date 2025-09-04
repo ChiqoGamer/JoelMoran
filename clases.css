@@ -256,7 +256,17 @@ nav ul li a:hover {
     );
     -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 6px), black calc(100% - 4px));
     mask: radial-gradient(farthest-side, transparent calc(100% - 6px), black calc(100% - 4px));
+    animation: girarBorde 19s linear infinite;   
 }
+
+@keyframes girarBorde {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
 
 .inicio-content{
     max-width: 600px;
@@ -352,6 +362,89 @@ nav ul li a:hover {
 .botones-home a:hover:before{
     width: 100%;
 }
+
+/* -------------------- MODAL ---------------------------- */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      overflow: hidden; /* oculta scroll en el modal */
+    }
+    .modal-content {
+      /* background: #d80707; */
+      background: rgba(0,0,0,0.8);
+      width: 100%;  
+      height: 100%; 
+      border-radius: 10px;
+      display: flex; 
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* --- BARRA DE HERRAMIENTAS --- */
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      /* background: #f5f5f544; */
+      /* border-bottom: 1px solid #ddd; */
+      padding: 5px 10px;
+    }
+    .toolbar-left, .toolbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .toolbar button {
+      background: none;
+      border: none;
+      font-size: 18px; 
+      cursor: pointer;
+      padding: 5px;
+      display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .toolbar button:hover { background: #dddddd26; border-radius: 5px; }
+
+    .toolbar button svg{
+        width: 1.5rem;
+        height: 1.5rem; 
+        color: white; 
+    }
+
+
+    /* --- CANVAS --- */
+    .pdf-viewer {
+      flex: 1;
+      overflow: auto;
+      /* background: #ccc; */
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      scrollbar-width: none;  /* oculta scrollbar en Firefox */
+    }
+
+    /* Ocultar scrollbar en Chrome/Edge */
+.pdf-viewer::-webkit-scrollbar {
+  display: none;
+}
+    #pdfCanvas {  
+        /* width: 60%;  */ 
+        /* height: 100%;     
+        object-fit: cover;  */
+      /* margin: 20px 0; */
+      /* border: 1px solid #aaa; */
+      /* background: #fff; */
+      /* transition: transform 0.2s ease; */
+
+    }
+
 
 /* --------------------ANIMACIONES DE ENTRADA---------------------------- */
 .logo::before{
@@ -936,6 +1029,38 @@ label{
     font-weight: lighter;
 }
 
+/* Alerta base */
+.alerta-oculta {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #4caf50; /* Verde por defecto */
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.alerta-mostrar {
+  display: block;
+  opacity: 1;
+}
+
+/* Estilo de error */
+.alerta-error {
+  background-color: #f44336; /* Rojo */
+}
+
+.alerta-cargando {
+  background-color: #5667ff; /* Rojo */
+}
+
+
 /* --------------------FOOTER---------------------------- */
 footer{
     text-align: center;
@@ -946,13 +1071,20 @@ footer{
     align-items: center;
 } 
 
-footer div{
+.line-footer{
     border-top: 1px solid #373541;
-    width: 80%;
+    width: 88%;
 }
 
 footer p{
-    margin: 2rem;
+    margin: 2rem 0;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 88%;
 }
 
 /* --------------------ADAPTABILIDAD EN COMPUS---------------------------- */
@@ -1101,6 +1233,19 @@ footer p{
 
     }
 
+    footer p{
+        margin: .5rem 0 0 0;
+    }
+
+     .footer-container{
+        flex-direction: column;
+        margin: 1rem 0 2rem 0; 
+    }
+
+     #pdfCanvas {  
+        /* width: 90%;   */
+     }
+
 }
 
 /* --------------------ADAPTABILIDAD EN CELULARES---------------------------- */
@@ -1164,23 +1309,6 @@ footer p{
         margin-bottom: 1rem;
     }
 
-    /* .cont-proyecto{
-        flex-direction: column-reverse;
-        margin-bottom: 3rem;
-    }
-
-    .proyecto-info{
-        width: 100%;
-    }
-
-    .descripcion{
-        margin-bottom: 1rem;
-    }
-
-    .proyecto-img{
-        width: 100%;
-    } */
-
     .linea{
     height: 260px;    
     }
@@ -1188,38 +1316,6 @@ footer p{
     .linea3{
     height: 150px;        
     }
-
-    /* .titulo-skills{
-        margin-bottom: 2rem;
-    }
-
-    .contenedor-tecno{
-        display: flex;
-        gap: 2rem; 
-    }  */
-
-    /* .titulo-contacto{
-        margin-bottom: 2rem;
-    }
-
-    .conteiner-contacto{
-        height: 100%;
-        gap: 2rem; 
-    }
-
-    .info-contacto,
-    .mensaje-contacto{
-        min-width: 100%;
-        /* width: 100%;  */
-        /* height: 450px;
-        padding: 1rem; 
-    } */
-
-    /* .info-contacto{
-        justify-content: center;
-        gap: 3rem 1rem;  
-
-    } */ 
 
     .info-svg svg{
         width: 1rem;
@@ -1244,7 +1340,9 @@ footer p{
 
     footer p{
         font-size: .6rem; 
+        margin: .5rem 0 0 0;
     }
+
 } 
 
 /* --------------------ADAPTABILIDAD EN 2k ---------------------------- */

@@ -1,3 +1,4 @@
+// Circular hover effect on technology boxes
 const cajas = document.querySelectorAll('.caja-tecno');
 
 cajas.forEach((caja) => {
@@ -16,7 +17,7 @@ cajas.forEach((caja) => {
   });
 });
 
-
+// Smooth scrolling for anchor links
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".menu a");
 
@@ -34,8 +35,8 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.4 } // el 60% de la sección debe estar visible para marcarla
-);
+  { threshold: 0. } // el 60% de la sección debe estar visible para marcarla
+); 
 
 sections.forEach((section) => observer.observe(section));
 
@@ -46,3 +47,51 @@ document.querySelectorAll('.menu a').forEach(link => {
         document.getElementById('menu-toggle').checked = false;
     });
 });
+
+
+// EmailJS integration
+const btn = document.getElementById('button');
+
+document.getElementById('form').addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   //btn.value = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_ryjs36n';
+
+   mostrarAlerta("Enviando mensaje...", false, true);
+   
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      //btn.value = 'Send Email';
+      mostrarAlerta("¡Mensaje enviado correctamente!");
+    }, (err) => {
+      //btn.value = 'Send Email';
+      mostrarAlerta("Error al enviar el mensaje. Inténtalo de nuevo más tarde.", true);
+      alert(JSON.stringify(err));
+    });
+    document.getElementById('form').reset();
+});
+
+
+// Alerta de mensaje enviado
+function mostrarAlerta(mensaje, esError = false, esCargando = false) {
+    const alerta = document.getElementById("alerta");
+    alerta.textContent = mensaje;
+    alerta.style.display = "block";
+    alerta.className = "alerta-oculta"; // resetear clases
+
+    if (esError) alerta.classList.add("alerta-error");
+    if (esCargando) alerta.classList.add("alerta-cargando");
+
+    alerta.classList.add("alerta-mostrar");
+
+    // 👇 Si es "cargando", no se oculta hasta que termine
+    if (!esCargando) {
+      setTimeout(() => {
+        alerta.classList.remove("alerta-mostrar");
+        setTimeout(() => (alerta.style.display = "none"), 300);
+      }, 3000);
+    }
+  }

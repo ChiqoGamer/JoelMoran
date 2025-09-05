@@ -116,12 +116,14 @@ const ctx = canvas.getContext("2d");
 
 let pdfDoc = null;
 let pageNum = 1;
-let scale = 1.4; 
+let scale = window.innerWidth < 768 ? 0.6 : 1.4; // Ajuste según tamaño de pantalla 
 
 // Abrir modal
 openBtn.addEventListener("click", (e) => {
   e.preventDefault();
   modal.style.display = "flex";
+  // Ajusta el zoom cada vez que se abre el modal
+  scale = window.innerWidth < 768 ? 0.6 : 1.4;   
   if (!pdfDoc) {
     loadPdf("cvJoel.pdf"); // Ruta de tu PDF
   }

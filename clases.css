@@ -297,7 +297,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    width: 400px;
+    width: 60%;     
     height: 50px;
     position: relative;
 }
@@ -307,7 +307,7 @@ nav ul li a:hover {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 250px;
+    width: 250px;  
     height: 100%;
     background: #1d1c22;
     border: 1px solid #00fe9b;
@@ -971,6 +971,7 @@ nav ul li a:hover {
 
 .mensaje-contacto textarea{
     height: 3.5rem;
+    resize: none;
 }
 
 label{
@@ -1343,6 +1344,21 @@ footer p{
         margin: .5rem 0 0 0;
     }
 
+}
+
+@media (max-width: 430px) {
+    .info-contacto p{
+        font-size: 12px;  
+    } 
+
+    .botones-home a:nth-child(1){
+        width: 180px;   
+    }
+
+    .contenedor-btn-proyectos a{
+        width: 120px;
+        font-size: .9rem;        
+    }
 } 
 
 /* --------------------ADAPTABILIDAD EN 2k ---------------------------- */
@@ -1352,4 +1368,3 @@ footer p{
     }
 }
 
- 

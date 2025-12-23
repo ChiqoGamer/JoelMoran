@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* ========== VARIABLES DE COLOR GLOBALES ========== */
 :root {
@@ -46,10 +47,12 @@ html {
 
 /* Establecer una fuente por defecto con Google Fonts */
 body {
-    font-family: "JetBrains Mono", monospace;
+    /* font-family: "JetBrains Mono", monospace; */
+    font-family: "Raleway", sans-serif;
     margin: 0;
     padding: 0;
     background-image: url(https://thelokin.dev/images/grainy.png);
+    
     background-color: var(--bg-dark);
     color: var(--text-primary);
 }
@@ -65,9 +68,10 @@ header {
     position: sticky;
     top: -1px;
     z-index: 10;
-    margin-bottom: 5%;
+    margin-bottom: 8%;  
     background-color: var(--bg-dark-semi);
-    background-image: url(https://thelokin.dev/images/grainy.png);
+    background-image: url(https://thelokin.dev/images/grainy.png);    
+    
 }
 
 .logo {
@@ -156,6 +160,75 @@ nav ul li a:hover {
     color: var(--text-black);
     /* texto negro */
 }
+/* --------------------  NAV NUEVA  ---------------------------- */
+/* NAVBAR GLASS */
+.navbar-glass {
+  position: fixed;
+  top: 20px;
+  left: 65%;
+  /* right: 20%; */
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  background: rgba(20, 20, 20, 0.1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius: 15px;
+  padding: 12px 22px;
+
+  /* ✨ GLOW SUAVE */
+  box-shadow:
+    0 0 30px rgba(0, 253, 127, 0.18),
+    0 0 40px rgba(0, 253, 127, 0.12),
+    inset 0 0 5px rgba(255, 255, 255, 0.01);  
+
+
+  /* border: 1px solid rgba(0, 255, 110, 0.182); */
+}
+
+
+/* LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.2rem;  
+  font-weight: normal; 
+
+  padding: 8px 12px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* HOVER */
+.nav-links li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.nav-links a {
+  color: var(--primary-color);
+}
+
+.nav-links a .icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--primary-color);
+  flex-shrink: 0;
+}
+
 
 /* --------------------MENU HAMBURGUESA PARA MOVIL---------------------------- */
 /* Checkbox oculto */
@@ -316,7 +389,7 @@ nav ul li a:hover {
 .inicio-content h1 {
     font-size: 50px;
     font-weight: 500;
-    margin: 0px;
+    margin: 0px 0px 10px 0px;
     position: relative;
 }
 
@@ -324,7 +397,7 @@ nav ul li a:hover {
     font-size: 32px;
     font-weight: 700;
     color: var(--primary-color);
-    margin: 0px;
+    margin: 0px 0px 10px 0px;
     position: relative;
 }
 

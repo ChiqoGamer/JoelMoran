@@ -466,6 +466,7 @@ nav ul li a:hover {
 .inicio-content p {
     font-size: 16px;
     margin: 20px 0 40px;
+    line-height: 1.8;
     position: relative;
 }
 
@@ -621,17 +622,6 @@ nav ul li a:hover {
 /* Ocultar scrollbar en Chrome/Edge */
 .pdf-viewer::-webkit-scrollbar {
     display: none;
-}
-
-#pdfCanvas {
-    /* width: 60%;  */
-    /* height: 100%;     
-        object-fit: cover;  */
-    /* margin: 20px 0; */
-    /* border: 1px solid #aaa; */
-    /* background: #fff; */
-    /* transition: transform 0.2s ease; */
-
 }
 
 
@@ -880,7 +870,7 @@ nav ul li a:hover {
 
 .descripcion {
     font-size: 0.95rem;
-    line-height: 1.5;
+    line-height: 1.8;
     margin: 0;
 }
 
@@ -1002,6 +992,7 @@ nav ul li a:hover {
     color: var(--text-primary);
     margin: 0;
     font-weight: lighter;
+    line-height: 1.8;
 }
 
 /* --------------------SKILLS---------------------------- */
@@ -1163,6 +1154,7 @@ nav ul li a:hover {
 
 .info-contacto p {
     font-size: 14px;
+    line-height: 1.8;
 }
 
 .mensaje-contacto form {
@@ -1182,6 +1174,7 @@ nav ul li a:hover {
     height: 1.5rem;
     color: var(--text-white);
     padding: 8px;
+    font-family: "Raleway", sans-serif;
 }
 
 .mensaje-contacto textarea {

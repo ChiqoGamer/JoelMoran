@@ -51,7 +51,7 @@ sections.forEach((section) => observer.observe(section));
 
 
 // Cierra el menú al hacer clic en cualquier enlace del menú
-document.querySelectorAll('.menu a').forEach(link => {
+document.querySelectorAll('.navbar-glass a').forEach(link => {
     link.addEventListener('click', () => {
         document.getElementById('menu-toggle').checked = false;
     });

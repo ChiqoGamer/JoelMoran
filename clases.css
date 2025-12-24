@@ -229,6 +229,68 @@ nav ul li a:hover {
   flex-shrink: 0;
 }
 
+/* ================= MENU HAMBURGUESA PARA NAVBAR GLASS ================= */
+
+@media (max-width: 1023px) {
+
+  /* Convertimos la navbar-glass en menú lateral */
+  .navbar-glass {
+    position: fixed;
+    top: 0;
+    right: -115%;     
+    left: auto;
+    transform: none; 
+    box-sizing: border-box;
+    width: 100vw;   
+    height: 100vh;
+
+    border-radius: 0;
+    /* padding: 2rem; */
+
+    background: var(--bg-dark);
+    background-image: url(https://thelokin.dev/images/grainy.png);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    transition: right 0.3s ease;
+  }
+
+  /* Mostrar menú cuando el checkbox está activo */
+  .menu-toggle:checked ~ .navbar-glass {
+    right: 0;
+  }
+
+  /* Links en columna */
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 6rem; 
+  }
+
+  .nav-links li {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  /* delays progresivos */
+  .nav-links li:nth-child(1) { animation-delay: 0.2s; }
+  .nav-links li:nth-child(2) { animation-delay: 0.4s; }
+  .nav-links li:nth-child(3) { animation-delay: 0.6s; }
+  .nav-links li:nth-child(4) { animation-delay: 0.8s; }
+  .nav-links li:nth-child(5) { animation-delay: 1s; }
+  .nav-links li:nth-child(6) { animation-delay: 1.2s; }
+
+  /* Links más grandes en mobile */
+  .nav-links li a {
+    font-size: 1.5rem;
+  }
+}
+
+
 
 /* --------------------MENU HAMBURGUESA PARA MOVIL---------------------------- */
 /* Checkbox oculto */

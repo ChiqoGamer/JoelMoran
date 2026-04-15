@@ -125,7 +125,7 @@ openBtn.addEventListener("click", (e) => {
   // Ajusta el zoom cada vez que se abre el modal
   scale = window.innerWidth < 768 ? 0.6 : 1.4;   
   if (!pdfDoc) {
-    loadPdf("cvJoel.pdf"); // Ruta de tu PDF
+    loadPdf("JoelMoran_FullStackDeveloper.pdf"); // Ruta de tu PDF
   }
 });
 
